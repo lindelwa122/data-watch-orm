@@ -1,3 +1,5 @@
+from queries.query_set import QuerySet
+
 def delete(data):
     # todo
     pass
@@ -31,8 +33,8 @@ def first(data):
     pass
 
 def last(data):
-    # todo
-    pass
+    last_point = data[-1]
+    return QuerySet(last_point)
 
 def order_by(data):
     # todo
