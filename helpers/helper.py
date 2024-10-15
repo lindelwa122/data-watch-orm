@@ -1,3 +1,5 @@
+import sqlite3
+
 def delete(data):
     # todo
     pass
@@ -26,11 +28,17 @@ def latest(data):
     # todo
     pass
 
-def first(data):
-    # todo
-    pass
+def first(cursor, table_name):
+    
+    try:
+        query = f"SELECT * FROM {table_name} LIMIT 1"
+        cursor.execute(query)
+        return cursor.fetchone()
+    except sqlite3.OperationalError:
+        # Return None if the table doesn't exist or any other SQLite operational error occurs
+        return None
 
-def last(data):
+def last(cursor, table_name):
     # todo
     pass
 
