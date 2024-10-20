@@ -29,8 +29,8 @@ def latest(data):
     pass
 
 def first(data):
-    # todo
-    pass
+    first_point = data[0]
+    return QuerySet(first_point)
 
 def last(data):
     last_point = data[-1]
